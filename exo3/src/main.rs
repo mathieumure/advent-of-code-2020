@@ -1,4 +1,5 @@
 use std::fs;
+use std::time::Instant;
 
 fn run (filename: String, right_incr: usize, down_incr: usize) -> u32 {
     let contents = fs::read_to_string(filename)
@@ -26,11 +27,17 @@ fn run (filename: String, right_incr: usize, down_incr: usize) -> u32 {
 }
 
 fn main () {
+    let start = Instant::now();
+
     let a = run(String::from("src/exo3.source.txt"), 1, 1);
     let b = run(String::from("src/exo3.source.txt"), 3, 1);
     let c = run(String::from("src/exo3.source.txt"), 5, 1);
     let d = run(String::from("src/exo3.source.txt"), 7, 1);
     let e = run(String::from("src/exo3.source.txt"), 1, 2);
-    println!("count: {:?}", a * b * c * d * e);
+    let result = a * b * c * d * e;
+    let duration = start.elapsed();
+
+    println!("count: {:?}", result);
+    println!("Time elapsed {:?}", duration);
 
 }
