@@ -1,5 +1,5 @@
 [package]
-name = "exo8"
+name = "day_08"
 version = "0.1.0"
 authors = ["Mathieu Mure <mathieu.mure@gmail.com>"]
 edition = "2018"
